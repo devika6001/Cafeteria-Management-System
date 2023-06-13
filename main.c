@@ -27,15 +27,14 @@ int main()                      	//Main Function
            {
                       system("cls");                                         //command included to clear screen
                       int ch;
-                      printf("************************************************************
-                       ************************************************************");
- printf("\n  ********  ********  ********  ********  *******  ********  *****                                            ***  ********  ********  ********  ********  ********");
-printf("\n   *****      *****    *****     *****     *****    *****     *****     *****                                 *****     *****     *****     *****");
-printf("\n    ***        ***      ***       ***       ***      ***       ***       ***       ***           ***       ***       ***");
+                      printf("************************************************************************************************************************");
+                      printf("\n  ********  ********  ********  ********  *******  ********  ********  ********  ********  ********  ********  ********");
+                      printf("\n   *****      *****    *****     *****     *****    *****     *****     *****     *****     *****     *****     *****");
+                      printf("\n    ***        ***      ***       ***       ***      ***       ***       ***       ***       ***       ***       ***");
                       printf("\n     *          *        *         *         *        *         *         *         *         *         *         *");
-                                             printf("\n\n************************************************************************************************************************");
-printf("\n\n*--------------------------------------------------HEARTY TUMMIES :))---------------       -----------------------------------*");
-                    printf("\n\n************************************************************************************************************************");
+                      printf("\n\n************************************************************************************************************************");
+                      printf("\n\n*--------------------------------------------------HEARTY TUMMIES :))--------------------------------------------------*");
+                      printf("\n\n************************************************************************************************************************");
                       printf("\n\n\tUSE:\n\t1.Menu");
                       printf("\n\t2.Purchasing counter");
                       printf("\n\t3.Coupons");
@@ -64,8 +63,8 @@ printf("\n\n*--------------------------------------------------HEARTY TUMMIES :)
 void Menu()       // Function to print entire menu
 {
            printf("\n\t\t<!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!>");
-            printf("\n\t\t-------------------------------MENU-------------------------------");
-            printf("\n\t\t<!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!>");
+           printf("\n\t\t-------------------------------MENU-------------------------------");
+           printf("\n\t\t<!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!><!>");
            printf("\n\n\t\t|---------------------------------------------------------------|");
            printf("\n\t\t|   S.NO   |     ITEMS     |     PRICE      |      Size         |");
            printf("\n\t\t|---------------------------------------------------------------|");
@@ -133,7 +132,7 @@ void detail()     //Function for details of customer
                       l=strlen(c[nc].pno);
            }
            printf("\t4.Address:");
-           scanf("%s",c[nc].add);
+           scanf("%s",&c[nc].add);
            printf("\t5.Enter your occupation:");
            scanf("%s",c[nc].occ);
            nc++;
@@ -151,8 +150,7 @@ void billingCounter()   //Function to take order from customer
            //checking condition as per choice entered by customer
            if(choice==1)
            {
-                      printf("\t\tWould you prefer a small sized pizza or a regular sized pizza?\n\t\t[1-]Small\n\t\t
-         [2-]Regular:");
+                      printf("\t\tWould you prefer a small sized pizza or a regular sized pizza?\n\t\t[1-]Small\n\t\t[2-]Regular:");
                       printf("\n\t\tEnter your choice:");
                       scanf("%d",&ch);
                       printf("\t\tEnter the quantity: ");
@@ -169,7 +167,7 @@ void billingCounter()   //Function to take order from customer
                       else
                       {
                                  printf("\t\tWrong choice");
-                                 billingCounter();     	//calling the function again to order  stuff correctly
+                                 billingCounter();     				//calling the function again to order  stuff correctly
                       }
                       printf("\t\tYour total amount is Rs.%.2f .\n",total);
                       ORDER1:printf("\n\t\tWould you like to buy anything else?\n\t\t[1]Yes\n\t\t[2]No ");
@@ -178,20 +176,18 @@ void billingCounter()   //Function to take order from customer
                       switch(order)
                       {
                                  case 1: billingCounter();                	//calling the function again to order more stuff
-                                             break;
-                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment of 
-     bill!");
-                                            couponcode(&total,quantity,ch);   //calling function to calculate bill
-                                             break;
+                                               break;
+                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment of bill!");
+                                              couponcode(&total,quantity,ch);   //calling function to calculate bill
+                                              break;
                                  default:printf("\t\tINVALID CHOICE!!");
                                                goto ORDER1;
                       }
            }
            else if(choice==2)
            {
-           printf("\t\tWould you prefer a half plate Manchurian or a full plate Manchurian?\n\t\t
-          [1]Half\n\t\t[2-]Full");
-                        printf("\n\t\tEnter your choice:");
+                      printf("\t\tWould you prefer a half plate Manchurian or a full plate Manchurian?\n\t\t[1-]Half\n\t\t[2-]Full");
+                      printf("\n\t\tEnter your choice:");
                       scanf("%d",&ch);
                       printf("\t\tEnter the quantity: ");
                       scanf("%d",&quantity);
@@ -207,7 +203,7 @@ void billingCounter()   //Function to take order from customer
                       else
                       {
                                  printf("\t\tWrong choice");
-                                 billingCounter();          //calling the function again to order  stuff correctly
+                                 billingCounter();           			//calling the function again to order  stuff correctly
                       }
                       printf("\t\tYour total amount is Rs.%.2f .\n",total);
                       ORDER2:printf("\n\t\tWould you like to buy anything else?\n\t\t[1]Yes\n\t\t[2]No");
@@ -216,19 +212,17 @@ void billingCounter()   //Function to take order from customer
                       switch(order)
                       {
                                  case 1: billingCounter();      		//calling the function again to order more stuff
-                                             break;
-       case 2:printf("\t\tThank you for the order! :) Please proceed with the payment of    
-     bill!");
-                                             couponcode(&total,quantity);       //calling the function to calculate bill
-                                             break;
+                                               break;
+                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment of bill!");
+                                              couponcode(&total,quantity);       //calling the function to calculate bill
+                                              break;
                                  default:printf("\t\tINVALID CHOICE!!");
                                                goto ORDER2;
                       }
            }
            else if(choice==3)
            {
-                      printf("\t\tWould you prefer a half plate pasta or a full plate pasta?\n\t\t[1-]Half
-         \n\t\t[2-]Full");
+                      printf("\t\tWould you prefer a half plate pasta or a full plate pasta?\n\t\t[1-]Half\n\t\t[2-]Full");
                       printf("\n\t\tEnter your choice:");
                       scanf("%d",&ch);
                       printf("\t\tEnter the quantity: ");
@@ -245,7 +239,7 @@ void billingCounter()   //Function to take order from customer
                       else
                       {
                                  printf("\t\tWrong choice");
-                                 billingCounter();              	//calling the function again to order  stuff correctly
+                                 billingCounter();              		//calling the function again to order  stuff correctly
                       }
                       printf("\t\tYour total amount is Rs.%.2f .\n",total);
                       ORDER3:printf("\n\t\tWould you like to buy anything else?\n\t\t[1]Yes\n\t\t[2]No");
@@ -253,20 +247,18 @@ void billingCounter()   //Function to take order from customer
                       scanf("%d", &order);
                       switch(order)
                       {
-                                 case 1: billingCounter();       	//calling the function again to order more stuff
+                                 case 1: billingCounter();       		//calling the function again to order more stuff
                                                break;
-                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment 
-     of   bill!");
-                                             couponcode(&total,quantity);  	 //calling the function to calculate bill
-                                             break;
+                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment of bill!");
+                                              couponcode(&total,quantity);  	 //calling the function to calculate bill
+                                              break;
                                  default:printf("\t\tINVALID CHOICE!!");
                                                goto ORDER3;
                       }
            }
            else if(choice==4)
            {
-                      printf("\t\tWould you prefer a small sized patties or a regular sized patties?\n\t\t[1]Small
-                      \n\t\t[2-]Regular");
+                      printf("\t\tWould you prefer a small sized patties or a regular sized patties?\n\t\t[1-]Small\n\t\t[2-]Regular");
                       printf("\n\t\tEnter your choice:");
                       scanf("%d",&ch);
                       printf("\t\tEnter the quantity: ");
@@ -283,7 +275,7 @@ void billingCounter()   //Function to take order from customer
                       else
                       {
                                  printf("\t\tWrong choice");
-                                 billingCounter();         	//calling the function again to order  stuff correctly
+                                 billingCounter();         			//calling the function again to order  stuff correctly
                       }
                       printf("\t\tYour total amount is Rs.%.2f \n ",total);
                       ORDER4:printf("\n\t\tWould you like to buy anything else?\n\t\t[1]Yes\n\t\t[2]No");
@@ -291,10 +283,9 @@ void billingCounter()   //Function to take order from customer
                       scanf("%d", &order);
                       switch(order)
                       {
-                                 case 1:billingCounter();      		//calling the function again to order more stuff
+                                 case 1: billingCounter();      		//calling the function again to order more stuff
                                                break;
-                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment
-       of bill!");
+                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment of bill!");
                                               couponcode(&total,quantity);      //calling the function to calculate bill
                                               break;
                                  default:printf("\t\tINVALID CHOICE!!");
@@ -303,8 +294,7 @@ void billingCounter()   //Function to take order from customer
            }
            else if(choice==5)
            {
-                      printf("\t\tWould you prefer a small sized burger or a regular sized burger?\n\t\t[1]Small
-         \n\t\t[2-]Regular");
+                      printf("\t\tWould you prefer a small sized burger or a regular sized burger?\n\t\t[1-]Small\n\t\t[2-]Regular");
                       printf("\n\t\tEnter your choice:");
                       scanf("%d",&ch);
                       printf("\t\tEnter the quantity: ");
@@ -321,7 +311,7 @@ void billingCounter()   //Function to take order from customer
                       else
                       {
                                  printf("\t\tWrong choice");
-                                 billingCounter();           	 //calling the function again to order  stuff correctly
+                                 billingCounter();           			    	 //calling the function again to order  stuff correctly
                       }
                       printf("\t\tYour total amount is Rs.%.2f \n ",total);
                       ORDER5:printf("\n\t\tWould you like to buy anything else?\n\t\t[1]Yes\n\t\t[2]No");
@@ -329,20 +319,18 @@ void billingCounter()   //Function to take order from customer
                       scanf("%d", &order);
                       switch(order)
                       {
-                                 case 1:billingCounter();       	//calling the function again to order more stuff
+                                 case 1:billingCounter();       		   	//calling the function again to order more stuff
                                               break;
-                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment 
-    of bill!");
-                                           couponcode(&total,quantity);      	 //calling the function to calculate bill
-                                            break;
+                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment of bill!");
+                                               couponcode(&total,quantity);      	 //calling the function to calculate bill
+                                               break;
                                  default:printf("\t\tINVALID CHOICE!!");
                                                goto ORDER5;
                       }
            }
            else if(choice==6)
            {
-                      printf("\t\tWould you prefer a half plate noodles or a full plate noodles?\n\t\t[1-]Half
-         \n\t\t[2-]Full");
+                      printf("\t\tWould you prefer a half plate noodles or a full plate noodles?\n\t\t[1-]Half\n\t\t[2-]Full");
                       printf("\n\t\tEnter your choice:");
                       scanf("%d",&ch);
                       printf("\t\tEnter the quantity: ");
@@ -359,7 +347,7 @@ void billingCounter()   //Function to take order from customer
                       else
                       {
                                  printf("\t\tWrong choice");
-                                 billingCounter();         	 //calling the function again to order  stuff correctly
+                                 billingCounter();         			 //calling the function again to order  stuff correctly
                       }
                       printf("\t\tYour total amount is Rs.%.2f .",total);
                       ORDER6:printf("\n\t\tWould you like to buy anything else?\n\t\t[1]Yes\n\t\t[2]No ");
@@ -367,20 +355,18 @@ void billingCounter()   //Function to take order from customer
                       scanf("%d", &order);
                       switch(order)
                       {
-                                 case 1:billingCounter();   		//calling the function again to order more stuff
+                                 case 1:billingCounter();   			//calling the function again to order more stuff
                                               break;
-                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment 
-     of bill!");
-                                             couponcode(&total,quantity);  	//calling the function to calculate bill
-                                             break;
+                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment of bill!");
+                                              couponcode(&total,quantity);  	//calling the function to calculate bill
+                                              break;
                                  default:printf("\t\tINVALID CHOICE!!");
                                                goto ORDER6;
                       }
            }
            else if(choice==7)
            {
-                      printf("\t\tWould you prefer a small sized cold coffee or a regular sized cold coffee?\n\t\t[1]
-         Small\n\t\t[2-]Regular");
+                      printf("\t\tWould you prefer a small sized cold coffee or a regular sized cold coffee?\n\t\t[1-]Small\n\t\t[2-]Regular");
                       printf("\n\t\tEnter your choice:");
                       scanf("%d",&ch);
                       printf("\t\tEnter the quantity: ");
@@ -397,7 +383,7 @@ void billingCounter()   //Function to take order from customer
                       else
                       {
                                  printf("\t\tWrong choice");
-                                 billingCounter();         	//calling the function again to order  stuff correctly
+                                 billingCounter();         				//calling the function again to order  stuff correctly
                       }
                       printf("\t\tYour total amount is Rs.%.2f \n ",total);
                       ORDER7:printf("\n\t\tWould you like to buy anything else?\n\t\t[1]Yes\n\t\t[2]No");
@@ -405,11 +391,10 @@ void billingCounter()   //Function to take order from customer
                       scanf("%d", &order);
                       switch(order)
                       {
-                                 case 1:billingCounter();       	//calling the function again to order more stuff
+                                 case 1:billingCounter();       			//calling the function again to order more stuff
                                               break;
-                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment
-     of bill!");
-                                            couponcode(&total,quantity);   	//calling the function to calculate bill
+                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment of bill!");
+                                              couponcode(&total,quantity);   		//calling the function to calculate bill
                                               break;
                                  default:printf("\t\tINVALID CHOICE!!");
                                                goto ORDER7;
@@ -417,8 +402,7 @@ void billingCounter()   //Function to take order from customer
            }
            else if(choice==8)
            {
-                      printf("\t\tWould you prefer a small sized oreo shake or a regular sized oreo shake?
-         \n\t\t[1-]Small\n\t\t[2-]Regular");
+                      printf("\t\tWould you prefer a small sized oreo shake or a regular sized oreo shake?\n\t\t[1-]Small\n\t\t[2-]Regular");
                       printf("\n\t\tEnter your choice:");
                       scanf("%d",&ch);
                       printf("\t\tEnter the quantity: ");
@@ -435,7 +419,7 @@ void billingCounter()   //Function to take order from customer
                       else
                       {
                                  printf("\t\tWrong choice");
-                                 billingCounter();          	//calling the function again to order  stuff correctly
+                                 billingCounter();          					//calling the function again to order  stuff correctly
                       }
                       printf("\t\tYour total amount is Rs.%.2f\n ",total);
                       ORDER8:printf("\n\t\tWould you like to buy anything else?\n\t\t[1]Yes\n\t\t[2]No");
@@ -443,11 +427,10 @@ void billingCounter()   //Function to take order from customer
                       scanf("%d", &order);
                       switch(order)
                       {
-                                 case 1:billingCounter(); 	 //calling the function again to order more stuff
-                                            break;
-                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment 
-    of bill!");
-                                              couponcode(&total,quantity);    	//calling the function to calculate bill
+                                 case 1:billingCounter(); 					 //calling the function again to order more stuff
+                                              break;
+                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment of bill!");
+                                              couponcode(&total,quantity);    			//calling the function to calculate bill
                                               break;
                                  default:printf("\t\tINVALID CHOICE!!");
                                  goto ORDER8;
@@ -455,8 +438,7 @@ void billingCounter()   //Function to take order from customer
            }
            else if(choice==9)
            {
-                      printf("\t\tWould you prefer a small sized pepsi or a Large sized pepsi?\n\t\t
-         [1-]Small\n\t\t[2-]Large");
+                      printf("\t\tWould you prefer a small sized pepsi or a Large sized pepsi?\n\t\t[1-]Small\n\t\t[2-]Large");
                       printf("\n\t\tEnter your choice:");
                       scanf("%d",&ch);
                       printf("\t\tEnter the quantity: ");
@@ -473,7 +455,7 @@ void billingCounter()   //Function to take order from customer
                       else
                       {
                                  printf("\t\tWrong choice");
-                                 billingCounter();                  	//calling the function again to order  stuff correctly
+                                 billingCounter();                  				//calling the function again to order  stuff correctly
                       }
                       printf("\t\tYour total amount is Rs.%.2f\n ",total);
                       ORDER9:printf("\n\t\tWould you like to buy anything else?\n\t\t[1]Yes\n\t\t[2]No");
@@ -481,11 +463,10 @@ void billingCounter()   //Function to take order from customer
                       scanf("%d", &order);
                       switch(order)
                       {
-                                 case 1:billingCounter();           //calling the function again to order more stuff
+                                 case 1:billingCounter();           				//calling the function again to order more stuff
                                               break;
-                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment
-    of bill!");
-                                           couponcode(&total,quantity);   //calling the function to calculate bill
+                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment of bill!");
+                                              couponcode(&total,quantity);   			//calling the function to calculate bill
                                               break;
                                  default:printf("\t\tINVALID CHOICE!!");
                                                goto ORDER9;
@@ -493,8 +474,7 @@ void billingCounter()   //Function to take order from customer
            }
            else if(choice==10)
            {
-                      printf("\t\tWould you prefer a small sized french fries packet or a regular sized 
-         french fries packet?\n\t\t[1-]Small\n\t\t[2-]Regular");
+                      printf("\t\tWould you prefer a small sized french fries packet or a regular sized french fries packet?\n\t\t[1-]Small\n\t\t[2-]Regular");
                       printf("\n\t\tEnter your choice:");
                       scanf("%d",&ch);
                       printf("\t\tEnter the quantity: ");
@@ -511,7 +491,7 @@ void billingCounter()   //Function to take order from customer
                       else
                       {
                                  printf("\t\tWrong choice");
-                                 billingCounter();                  	//calling the function again to order  stuff correctly
+                                 billingCounter();                  			//calling the function again to order  stuff correctly
                       }
                       printf("\t\tYour total amount is Rs.%.2f \n ",total);
                       ORDER10:printf("\n\t\tWould you like to buy anything else?\n\t\t[1]Yes\n\t\t[2]No");
@@ -519,11 +499,10 @@ void billingCounter()   //Function to take order from customer
                       scanf("%d", &order);
                       switch(order)
                       {
-                                 case 1:billingCounter();     		 //calling the function again to order more stuff
+                                 case 1:billingCounter();     				 //calling the function again to order more stuff
                                               break;
-                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment
-     of bill!");
-                                            couponcode(&total,quantity);     //calling the function again to calculate bill
+                                 case 2:printf("\t\tThank you for the order! :) Please proceed with the payment of bill!");
+                                              couponcode(&total,quantity);     	 	//calling the function again to calculate bill
                                               break;
                                  default:printf("\t\tINVALID CHOICE!!");
                                                goto ORDER10;
@@ -579,8 +558,7 @@ void Coupon()          //Function to print Coupon available
            printf("\n\t\t_ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _  \n");
            printf("\t\t|\t\t\tLUNCH100 \t\t  |\n\t\t|Terms & Conditions\t\t\t\t  |");
            printf("\n\t\t|*FLAT RS.100 OFF ON LUNCH ORDER\t\t  |");
-           printf("\n\t\t|*Minimum food order amount of Rs.400 is required |\n\t\t|Valid till Dec 31 2020\t\t\t
-            \t  |" );
+           printf("\n\t\t|*Minimum food order amount of Rs.400 is required |\n\t\t|Valid till Dec 31 2020\t\t\t\t  |" );
            printf("\n\t\t|_ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ | \n");
            printf("\n\t\t_ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _  \n");
            printf("\t\t|\t\t\tPAYTM300 \t\t  |\n\t\t|Terms & Conditions\t\t\t\t  |");
@@ -602,7 +580,7 @@ void Coupon()          //Function to print Coupon available
            printf("\n\t\t|Price under offer: Rs.80 each:\t\t\t  |\n\t\t|Valid till Dec 15 2020\t\t\t\t  |" );
            printf("\n\t\t|_ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ | \n\n");
 }
-void couponcode(float * x,int quan1,int order)    //Function to calculate Bill as per coupon and conditions
+void couponcode(float * x,int quan1,int order)                //Function to calculate Bill as per coupon and conditions
 {
            int i=0,mode,ch,account[16],pin[4];
            float amount,bal;
@@ -611,7 +589,7 @@ void couponcode(float * x,int quan1,int order)    //Function to calculate Bill a
            printf("\n\t\tWould you like to apply a coupon?(Yes/No ):");
            scanf("%s",flag2);
            if(flag2[0]=='y'||flag2[0]=='Y')
-           {                                                 //Checking which coupons are available for you according to order
+           {                                                              //Checking which coupons are available for you according to order
                       if(*x>400)
                                  printf("\n\n\t\tCOUPON: LUNCH100 APPLICABLE");
                       if(*x>300)
@@ -654,16 +632,14 @@ void couponcode(float * x,int quan1,int order)    //Function to calculate Bill a
                       scanf("%d",&mode);                    //Checking conditions as per mode of payment
                       if((stricmp(coupon1,"PAYTM300")==0)&&mode==2)
                       {
-                                 printf("\n\t=> Thank you we received a payment of Rs.%f from your 
-       side through PAYTM",*x);
+                                 printf("\n\t=> Thank you we received a payment of Rs.%f from your side through PAYTM",*x);
                                  printf("\n\t=>You would get a cash back of Rs 150 of on your order ");
                       }
                       else if(mode ==1)
                       {
                                  if(stricmp(coupon1,"PAYTM300")==0)
                                  {
-                                            printf("\n\t\tYou chose the WRONG method to pay :You are required 
-     to pay via Paytm\n");
+                                            printf("\n\t\tYou chose the WRONG method to pay :You are required to pay via Paytm\n");
                                             mode=0;
                                  }
                                 else
@@ -682,8 +658,7 @@ void couponcode(float * x,int quan1,int order)    //Function to calculate Bill a
                       {
                                  if(stricmp(coupon1,"PAYTM300")==0)
                                  {
-                                            printf("\n\t\t You chose the WRONG method to pay :You are required to 
-                  pay via Paytm\n");
+                                            printf("\n\t\t You chose the WRONG method to pay :You are required to pay via Paytm\n");
                                             mode=0;
                                  }
                                  else
@@ -760,7 +735,6 @@ void Feedback()          		//Function to take feed back from customer
 }
 void exitprogram()     //Function to exit program
 {
-           printf("\n\n\t\tTHANK YOU FOR COMING AND PLEASE VISIT US NEXT TIME:)\n\t\t
-           Developed By-\n\t\t\tDevika Gupta:)");
+           printf("\n\n\t\tTHANK YOU FOR COMING AND PLEASE VISIT US NEXT TIME:)\n\t\tDeveloped By-\n\t\t\tDevika Gupta:) \n\t\t\tDrishika Chauhan:) \n\t\t\tAnanya Gupta:)\n\n");
            exit(0);
 }
